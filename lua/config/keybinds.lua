@@ -32,6 +32,6 @@ vim.api.nvim_create_autocmd("Filetype", {
 vim.api.nvim_create_autocmd("Filetype", {
     pattern = "java",
     callback = function()
-        vim.keymap.set("n", "<leader>r", ":w <Bar> execute 'cd %:p:h' <bar> TermExec cmd='javac % && java %<' <CR>")
+        vim.keymap.set("n", "<leader>r", ":DapContinue <CR>")
     end
 })
