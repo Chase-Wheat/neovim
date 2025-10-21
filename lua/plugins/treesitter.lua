@@ -14,6 +14,8 @@ return {
                 "cpp",
                 "python",
                 "java",
+                "asm",
+                "c",
             },
             auto_install = false,
         })
