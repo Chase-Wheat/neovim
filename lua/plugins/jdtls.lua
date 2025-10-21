@@ -161,9 +161,9 @@ return {
                             {
                                 mode = "n",
                                 buffer = args.buf,
-                                { "<leader>t",  group = "test" },
+                                { "<leader>u",  group = "test" },
                                 {
-                                    "<leader>tt",
+                                    "<leader>uu",
                                     function()
                                         require("jdtls.dap").test_class({
                                             config_overrides = type(opts.test) ~= "boolean" and
@@ -173,7 +173,7 @@ return {
                                     desc = "Run All Tests",
                                 },
                                 {
-                                    "<leader>tr",
+                                    "<leader>ur",
                                     function()
                                         require("jdtls.dap").test_nearest_method({
                                             config_overrides = type(opts.test) ~= "boolean" and
@@ -182,7 +182,7 @@ return {
                                     end,
                                     desc = "Run Nearest Test",
                                 },
-                                { "<leader>tT", require("jdtls.dap").pick_test, desc = "Pick Test" },
+                                { "<leader>uU", require("jdtls.dap").pick_test, desc = "Pick Test" },
                             },
                         })
                     end
