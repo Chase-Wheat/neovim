@@ -6,6 +6,7 @@ vim.keymap.set("n", "<leader>E", vim.cmd.NvimTreeFocus)
 vim.keymap.set("n", "<leader>t", "<cmd>tabnew %:h<cr>")
 vim.keymap.set("n", "<leader>q", vim.cmd.tabclose)
 vim.keymap.set("n", "<leader>b", vim.cmd.ToggleTerm)
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename Variable" })
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "cpp",
     callback = function()
