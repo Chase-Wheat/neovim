@@ -4,7 +4,10 @@ return {
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
         require('maven').setup({
-            executable = "./mvnw"
+            executable = "./mvnw",
+            commands = {
+                { cmd = { "compile", "exec:java" }, desc = "execute main class" }
+            }
         })
     end
 }

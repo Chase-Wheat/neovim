@@ -16,6 +16,7 @@ return {
                 "java",
                 "asm",
                 "c",
+                "go",
             },
             auto_install = false,
         })
