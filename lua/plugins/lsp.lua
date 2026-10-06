@@ -38,15 +38,20 @@ return {
             end
         })
 
-        -- Add borders to floating windows
-        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-            vim.lsp.handlers.hover,
-            { border = 'rounded' }
-        )
-        vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-            vim.lsp.handlers.signature_help,
-            { border = 'rounded' }
-        )
+        -- Replace the old vim.lsp.with overrides with this:
+        vim.diagnostic.config({
+            float = { border = "rounded" },
+        })
+
+        --vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        --border = "rounded",
+        --})
+
+        --vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+        --border = "rounded",
+        --})	
+
+        vim.o.winborder = "rounded"
 
         -- Configure error/warnings interface
         vim.diagnostic.config({
@@ -149,6 +154,7 @@ return {
                 documentation = cmp.config.window.bordered(),
             },
             sources = {
+                { name = 'copilot' },
                 { name = 'path' },
                 { name = 'nvim_lsp' },
                 { name = 'buffer',  keyword_length = 3 },
